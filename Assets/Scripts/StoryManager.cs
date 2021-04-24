@@ -13,19 +13,19 @@ public class StoryManager : MonoBehaviour
     [SerializeField] float fadeSpeed = 0.1f;
 
 
-    Story story;
+    StoryEvent story;
 
     // Start is called before the first frame update
     void Start()
     {
-        story = (Story)startingStory;
+        story = (StoryEvent)startingStory;
         textComponent.text = story.GetStoryText();
     }
 
     public void DisplayText()
     {
         var nextStory = story.GetNextStory();
-        story = (Story)nextStory;
+        story = (StoryEvent)nextStory;
         textComponent.text = story.GetStoryText();
         StartCoroutine(TextFade());
     }
