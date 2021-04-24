@@ -19,6 +19,7 @@ public class Goal : MonoBehaviour
     [SerializeField] float startZoomOut = 5f;
     [SerializeField] float zoomIncrement = 1f;
     [SerializeField] float zoomOutSpeed = 0.1f;
+    [SerializeField] float maxZoom = 10f;
 
     //cache
     StoryManager storyManager;
@@ -63,10 +64,17 @@ public class Goal : MonoBehaviour
     private IEnumerator ZoomOut()
     {
         var currentZoom = myCamera.m_Lens.OrthographicSize;
-        var newZoom = currentZoom + zoomIncrement;
-        while(myCamera.m_Lens.OrthographicSize <= newZoom)
+        if (currentZoom <= maxZoom)
         {
-            myCamera.m_Lens.OrthographicSize += zoomOutSpeed * Time.deltaTime;
+            var newZoom = currentZoom + zoomIncrement;
+            while (myCamera.m_Lens.OrthographicSize <= newZoom)
+            {
+                myCamera.m_Lens.OrthographicSize += zoomOutSpeed * Time.deltaTime;
+                yield return null;
+            }
+        }
+        else
+        { 
             yield return null;
         }
         
