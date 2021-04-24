@@ -38,13 +38,19 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        this.currentLap++;
-        this.lapText.text = ("Laps: " + currentLap);
-        //storyIndex.CompleteLap();
-        var myLap = storyIndex.GetCurrentLap(this.currentLap);
-        Debug.Log("Current lap is " + myLap);
-        storyManager.DisplayText();
-        Unlocks();
+        if (playerKart.CheckCheckpoints())
+        {
+            playerKart.ResetCheckpoints();
+            this.currentLap++;
+            this.lapText.text = ("Laps: " + currentLap);
+            var myLap = storyIndex.GetCurrentLap(this.currentLap);
+            storyManager.DisplayText();
+            Unlocks();
+        }
+        else
+        { 
+            return; 
+        }
     }
 
     private void Unlocks()

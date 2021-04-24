@@ -77,11 +77,12 @@ MonoBehaviour:
   lapDisplayUnlock: 3
   speedIncreaseUnlock: 5
   speedIncrement: 1
-  turnIncrement: 0.5
+  turnIncrement: 10
   myCamera: {fileID: 0}
   startZoomOut: 6
   zoomIncrement: 1
   zoomOutSpeed: 1
+  maxZoom: 10
 --- !u!212 &5871280017735859428
 SpriteRenderer:
   m_ObjectHideFlags: 0

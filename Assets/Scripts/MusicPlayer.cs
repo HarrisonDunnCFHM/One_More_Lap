@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
+
+    [SerializeField] bool isMuted = false;
+    
     private void Awake()
     {
         int musicPlayerCount = FindObjectsOfType<MusicPlayer>().Length;
@@ -18,6 +21,20 @@ public class MusicPlayer : MonoBehaviour
     }
 
 
+
+    public void ToggleMute()
+    {
+        if(!isMuted)
+        {
+            GetComponent<AudioSource>().mute = true;
+            isMuted = true;
+        }
+        else if(isMuted)
+        {
+            GetComponent<AudioSource>().mute = false;
+            isMuted = false;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

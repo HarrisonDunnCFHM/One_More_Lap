@@ -14,8 +14,14 @@ public class Kart : MonoBehaviour
 
     [SerializeField] float currentSpeed; //serialized for debugging
     [SerializeField] AudioClip crashNoise;
-    [SerializeField] float crashVolume = 0.8f;
+    [SerializeField] float crashVolume = 0.4f;
     [SerializeField] GameObject crashParticles;
+
+    //ref params
+    [SerializeField] bool checkpointA = true; //serialized for debugging
+    [SerializeField] bool checkpointB = true; //serialized for debugging
+    [SerializeField] bool isMuted = false;
+    [SerializeField] float currentVolume;
 
     //cache
     Rigidbody2D myRigidBody;
@@ -25,6 +31,9 @@ public class Kart : MonoBehaviour
     {
         currentSpeed = startSpeed;
         myRigidBody = GetComponent<Rigidbody2D>();
+        checkpointA = true;
+        checkpointB = true;
+        currentVolume = crashVolume;
     }
 
     // Update is called once per frame
@@ -37,7 +46,7 @@ public class Kart : MonoBehaviour
     private void PlayerTurn()
     {
         float controlDirection = CrossPlatformInputManager.GetAxis("Horizontal"); //value between -1 to +1
-        var kartRotation = controlDirection * -turnSpeed;
+        var kartRotation = controlDirection * -turnSpeed * Time.deltaTime;
         myRigidBody.rotation += kartRotation;
     }
 
@@ -66,7 +75,7 @@ public class Kart : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        AudioSource.PlayClipAtPoint(crashNoise, Camera.main.transform.position, crashVolume);
+        AudioSource.PlayClipAtPoint(crashNoise, Camera.main.transform.position, currentVolume);
         CrashSparks();
     }
 
@@ -74,5 +83,52 @@ public class Kart : MonoBehaviour
     {
         GameObject explosion = Instantiate(crashParticles, transform.position, transform.rotation);
         Destroy(explosion, 1f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D checkpoint)
+    {
+        if(checkpoint.gameObject.tag == "Checkpoint A")
+        {
+            checkpointA = true;
+        }
+        else if(checkpoint.gameObject.tag == "Checkpoint B")
+        {
+            checkpointB = true;
+        }
+        else
+        { 
+            return;
+        }
+    }
+
+    public bool CheckCheckpoints()
+    {
+        if(checkpointA && checkpointB)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void ResetCheckpoints()
+    {
+        checkpointA = false;
+        checkpointB = false;
+    }
+    public void ToggleMute()
+    {
+        if (!isMuted)
+        {
+            currentVolume = 0;
+            isMuted = true;
+        }
+        else if (isMuted)
+        {
+            currentVolume = crashVolume;
+            isMuted = false;
+        }
     }
 }
