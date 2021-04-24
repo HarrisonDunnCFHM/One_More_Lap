@@ -39,7 +39,7 @@ public class Kart : MonoBehaviour
         float controlThrow = CrossPlatformInputManager.GetAxis("Vertical"); //value between -1 to +1
         var kartSpeed = controlThrow * maxSpeed;
         Debug.Log("Your speed is " + kartSpeed);
-        Vector2 kartVelocity = new Vector2(myRigidBody.velocity.x, kartSpeed);
+        //Vector2 kartVelocity = new Vector2(myRigidBody.velocity.x, kartSpeed);
         myRigidBody.velocity = transform.up * kartSpeed;
     }
 }
