@@ -8,25 +8,40 @@ public class ManageStory : MonoBehaviour
 {
     //config params
     [SerializeField] Text textComponent;
+    [SerializeField] Story startingStory;
+    [SerializeField] float fadeDelay = 2f;
+    [SerializeField] float fadeSpeed = 0.1f;
 
-    float textAlpha = 1f;
 
+    Story story;
 
     // Start is called before the first frame update
     void Start()
     {
-        textComponent.text = "Testing text goes here!";
+        story = startingStory;
+        textComponent.text = story.GetStoryText();
     }
 
-    public void DisplayText(string storyText)
+    public void DisplayText()
     {
-        textComponent.text = storyText;
+        var nextStory = story.GetNextStory();
+        story = nextStory;
+        textComponent.text = story.GetStoryText();
         StartCoroutine(TextFade());
     }
 
     private IEnumerator TextFade()
     {
-        yield return new WaitForSeconds(3);
+        var tempColor = textComponent.color;
+        tempColor.a = 1;
+        textComponent.color = tempColor;
+        yield return new WaitForSeconds(fadeDelay);
+        while (tempColor.a > 0.0f)
+        {
+            tempColor = new Color(tempColor.r, tempColor.g, tempColor.b, tempColor.a - (Time.deltaTime / fadeSpeed));
+            textComponent.color = tempColor;
+            yield return null;
+        }
         textComponent.text = "";
 
     }

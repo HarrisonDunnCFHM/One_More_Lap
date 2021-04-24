@@ -19,8 +19,6 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        manageStory.DisplayText("One more lap!");
-        //var storyText = story.GetStoryText();
-        
+        manageStory.DisplayText();       
     }
 }
