@@ -13,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Player
+  - Course
+  - Course Obstacles
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Course
+    uniqueID: 1338508153
+    locked: 0
+  - name: Player
+    uniqueID: 4116124111
+    locked: 0
+  - name: Course Obstacles
+    uniqueID: 3986210913
+    locked: 0
+  - name: UI
+    uniqueID: 1063298103
     locked: 0

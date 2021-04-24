@@ -8,14 +8,19 @@ public class Kart : MonoBehaviour
 {
     //config params
     [SerializeField] float turnSpeed = 1f;
-    [SerializeField] float maxSpeed = 10f;
+    [SerializeField] float startSpeed = 10f;
+
+    [SerializeField] float maxSpeed; //serialized for debugging
+    [SerializeField] AudioClip crashNoise;
+    [SerializeField] float crashVolume = 0.8f;
 
     //cache
     Rigidbody2D myRigidBody;
-    
+
     // Start is called before the first frame update
     void Start()
     {
+        maxSpeed = startSpeed;
         myRigidBody = GetComponent<Rigidbody2D>();
     }
 
@@ -40,4 +45,19 @@ public class Kart : MonoBehaviour
         //Debug.Log("Your speed is " + kartSpeed);
         myRigidBody.velocity = transform.up * kartSpeed;
     }
+
+    public void IncreaseMoveSpeed(float newSpeed)
+    {
+        maxSpeed += newSpeed;
+    }
+
+    public void IncreaseTurnSpeed(float newTurnSpeed)
+    {
+        turnSpeed += newTurnSpeed;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        AudioSource.PlayClipAtPoint(crashNoise, Camera.main.transform.position, crashVolume);
+    }
+
 }

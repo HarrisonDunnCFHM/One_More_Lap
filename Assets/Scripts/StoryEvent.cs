@@ -10,7 +10,6 @@ public class StoryEvent : ScriptableObject
     //config params
     [TextArea(10, 14)] [SerializeField] string storyText;
     [SerializeField] ScriptableObject nextStory;
-    [SerializeField] int lapDisplayUnlock = 3;
 
     //cache
     int nextStoryIndex;
@@ -32,4 +31,6 @@ public class StoryEvent : ScriptableObject
     {
         return nextStory;
     }
+
+    
 }
