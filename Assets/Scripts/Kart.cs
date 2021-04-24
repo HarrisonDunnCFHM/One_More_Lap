@@ -7,8 +7,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Kart : MonoBehaviour
 {
     //config params
-    [SerializeField] float maxTurn = 90f;
-    //[SerializeField] float turnSpeed = 2f;
+    [SerializeField] float turnSpeed = 1f;
     [SerializeField] float maxSpeed = 10f;
 
     //cache
@@ -30,8 +29,8 @@ public class Kart : MonoBehaviour
     private void PlayerTurn()
     {
         float controlDirection = CrossPlatformInputManager.GetAxis("Horizontal"); //value between -1 to +1
-        var kartRotation = controlDirection * -maxTurn;
-        myRigidBody.rotation = kartRotation;
+        var kartRotation = controlDirection * -turnSpeed;
+        myRigidBody.rotation += kartRotation;
     }
 
     private void PlayerSpeed()

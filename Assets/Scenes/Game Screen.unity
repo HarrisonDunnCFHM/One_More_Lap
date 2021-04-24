@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a34a1d24498274d9724b9e1e155b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTurn: 90
+  maxTurn: 10
   maxSpeed: 10
 --- !u!212 &1892727765
 SpriteRenderer:
