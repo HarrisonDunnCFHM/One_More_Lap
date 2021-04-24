@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Story 3
   m_EditorClassIdentifier: 
   storyText: One more lap for real this time.
-  nextStory: {fileID: 11400000, guid: de82a94f4bc95b54f8b952f38d4c1753, type: 2}
+  nextStory: {fileID: 0}

@@ -893,6 +893,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1306344458}
   - component: {fileID: 1306344457}
+  - component: {fileID: 1306344459}
   m_Layer: 0
   m_Name: Story
   m_TagString: Untagged
@@ -930,6 +931,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1306344459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306344456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23687aa3e0bb044b926c38a974bda6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLap: 0
+  lapEvents:
+  - {fileID: 11400000, guid: 4cd4a24ca600dc64887f908953f6da34, type: 2}
+  - {fileID: 11400000, guid: 4514744e395da574d95d8bf6e01b02a0, type: 2}
+  - {fileID: 11400000, guid: 600cc4912f1ce514b883f1745cbf2c15, type: 2}
+  - {fileID: 11400000, guid: de82a94f4bc95b54f8b952f38d4c1753, type: 2}
+  - {fileID: 11400000, guid: 70974f8b18d985d4da2d91df2c5223b8, type: 2}
 --- !u!1 &1425648090
 GameObject:
   m_ObjectHideFlags: 0

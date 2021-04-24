@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ManageStory : MonoBehaviour
+public class StoryManager : MonoBehaviour
 {
     //config params
     [SerializeField] Text textComponent;
-    [SerializeField] Story startingStory;
+    [SerializeField] ScriptableObject startingStory;
     [SerializeField] float fadeDelay = 2f;
     [SerializeField] float fadeSpeed = 0.1f;
 
@@ -18,14 +18,14 @@ public class ManageStory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        story = startingStory;
+        story = (Story)startingStory;
         textComponent.text = story.GetStoryText();
     }
 
     public void DisplayText()
     {
         var nextStory = story.GetNextStory();
-        story = nextStory;
+        story = (Story)nextStory;
         textComponent.text = story.GetStoryText();
         StartCoroutine(TextFade());
     }
