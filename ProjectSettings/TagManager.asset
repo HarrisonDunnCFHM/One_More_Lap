@@ -19,7 +19,7 @@ TagManager:
   - Course
   - Course Obstacles
   - Background
-  - 
+  - Decor
   - 
   - 
   - 
@@ -51,6 +51,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4116124111
+    locked: 0
+  - name: Decor Short
+    uniqueID: 3266825535
+    locked: 0
+  - name: Decor Tall
+    uniqueID: 1341935211
     locked: 0
   - name: Course Obstacles
     uniqueID: 3986210913

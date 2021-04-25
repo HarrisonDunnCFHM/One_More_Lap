@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8b86934d7c08c4caf1afb930e5d60d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 0}
+  storyText: {fileID: 0}
+  storyTextShadow: {fileID: 0}
   startingStory: {fileID: 11400000, guid: 4cd4a24ca600dc64887f908953f6da34, type: 2}
-  fadeDelay: 2
+  fadeDelay: 2.5
   fadeSpeed: 0.8
 --- !u!114 &5442268379506183115
 MonoBehaviour:
