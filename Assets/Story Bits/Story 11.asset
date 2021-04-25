@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Story 11
   m_EditorClassIdentifier: 
   storyText: 
-  nextStory: {fileID: 11400000, guid: 4cd4a24ca600dc64887f908953f6da34, type: 2}
+  nextStory: {fileID: 11400000, guid: 3ac0730aa62f09942bbffa00e6ddfe20, type: 2}

@@ -9,7 +9,7 @@ public class StoryEvent : ScriptableObject
     
     //config params
     [TextArea(10, 14)] [SerializeField] string storyText;
-    [SerializeField] ScriptableObject nextStory;
+    [SerializeField] StoryEvent nextStory;
 
     //cache
     int nextStoryIndex;
@@ -17,9 +17,7 @@ public class StoryEvent : ScriptableObject
 
     private void OnEnable()
     {
-        myIndex = System.Array.IndexOf(FindObjectOfType<StoryIndex>().GetStories(), this);
-        nextStoryIndex = myIndex + 1;
-        nextStory = FindObjectOfType<StoryIndex>().GetCurrentLap(nextStoryIndex);
+        
     }
 
     public string GetStoryText()
@@ -27,8 +25,12 @@ public class StoryEvent : ScriptableObject
         return storyText;
     }
 
-    public ScriptableObject GetNextStory()
+    public StoryEvent GetNextStory()
     {
+        var storyArray = FindObjectOfType<StoryIndex>().GetStories();
+        myIndex = System.Array.IndexOf(storyArray, this);
+        nextStoryIndex = myIndex + 1;
+        nextStory = FindObjectOfType<StoryIndex>().GetCurrentLap(nextStoryIndex);
         return nextStory;
     }
 

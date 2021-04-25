@@ -5,15 +5,15 @@ using UnityEngine;
 public class StoryIndex : MonoBehaviour
 {
     //config params
-    [SerializeField] ScriptableObject[] lapEvents;
+    [SerializeField] StoryEvent[] lapEvents;
     
 
-    public ScriptableObject[] GetStories()
+    public StoryEvent[] GetStories()
     {
         return lapEvents;
     }
 
-    public ScriptableObject GetCurrentLap(int currentLap)
+    public StoryEvent GetCurrentLap(int currentLap)
     {
         return lapEvents[currentLap];
     }

@@ -20,11 +20,13 @@ public class Goal : MonoBehaviour
     [SerializeField] float zoomIncrement = 1f;
     [SerializeField] float zoomOutSpeed = 0.1f;
     [SerializeField] float maxZoom = 10f;
+    [SerializeField] int darkenScreenEachLevel = 5;
 
     //cache
     StoryManager storyManager;
     StoryIndex storyIndex;
     Kart playerKart;
+    Darker[] darker;
 
     private void Start()
     {
@@ -34,6 +36,7 @@ public class Goal : MonoBehaviour
         storyManager = FindObjectOfType<StoryManager>();
         storyIndex = FindObjectOfType<StoryIndex>();
         playerKart = FindObjectOfType<Kart>();
+        darker = FindObjectsOfType<Darker>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -65,6 +68,10 @@ public class Goal : MonoBehaviour
             playerKart.IncreaseTurnSpeed(turnIncrement);
             StartCoroutine(ZoomOut());
         }
+        if (currentLap % darkenScreenEachLevel == 0)
+        {
+            DarkenScreen();
+        }
     }
 
     private IEnumerator ZoomOut()
@@ -80,9 +87,17 @@ public class Goal : MonoBehaviour
             }
         }
         else
-        { 
+        {
             yield return null;
         }
-        
+
+    }
+
+    private void DarkenScreen()
+    {
+        foreach(Darker dark in darker)
+        {
+            dark.DarkenImage();
+        }
     }
 }

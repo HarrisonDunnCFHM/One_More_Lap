@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -178843185
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: abe8c51839351c3458ce74a772a13044, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,6 +106,10 @@ MonoBehaviour:
   crashVolume: 0.4
   crashParticles: {fileID: 8779490940987000456, guid: 023dce2cf8580be4aa95bc07566aef36,
     type: 3}
+  checkpointA: 1
+  checkpointB: 1
+  isMuted: 0
+  currentVolume: 0
 --- !u!50 &4467340967286271053
 Rigidbody2D:
   serializedVersion: 4
@@ -160,7 +164,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4467340967286271049}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0b39b0d501fff534c8e399357888ec37, type: 3}

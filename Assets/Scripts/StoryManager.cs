@@ -8,7 +8,7 @@ public class StoryManager : MonoBehaviour
 {
     //config params
     [SerializeField] Text textComponent;
-    [SerializeField] ScriptableObject startingStory;
+    [SerializeField] StoryEvent startingStory;
     [SerializeField] float fadeDelay = 2f;
     [SerializeField] float fadeSpeed = 0.1f;
 
