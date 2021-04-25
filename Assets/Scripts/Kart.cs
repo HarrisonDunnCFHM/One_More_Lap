@@ -15,6 +15,8 @@ public class Kart : MonoBehaviour
     [SerializeField] float currentSpeed; //serialized for debugging
     [SerializeField] AudioClip crashNoise;
     [SerializeField] float crashVolume = 0.4f;
+    [SerializeField] float motorVolumeLow = 0.1f;
+    [SerializeField] float motorVolumeHigh = 0.4f;
     [SerializeField] GameObject crashParticles;
 
     //ref params
@@ -25,6 +27,7 @@ public class Kart : MonoBehaviour
 
     //cache
     Rigidbody2D myRigidBody;
+    AudioSource myAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,8 @@ public class Kart : MonoBehaviour
         checkpointA = true;
         checkpointB = true;
         currentVolume = crashVolume;
+        myAudioSource = GetComponent<AudioSource>();
+        myAudioSource.volume = motorVolumeLow;
     }
 
     // Update is called once per frame
@@ -54,8 +59,16 @@ public class Kart : MonoBehaviour
     {
         float controlThrow = CrossPlatformInputManager.GetAxis("Vertical"); //value between -1 to +1
         var kartSpeed = controlThrow * currentSpeed;
-        //Debug.Log("Your speed is " + kartSpeed);
         myRigidBody.velocity = transform.up * kartSpeed;
+        if (controlThrow != 0)
+        {
+            myAudioSource.volume = motorVolumeHigh;
+        }
+        else
+        {
+            myAudioSource.volume = motorVolumeLow;
+        }
+
     }
 
     public void IncreaseMoveSpeed(float newSpeed)
@@ -122,13 +135,29 @@ public class Kart : MonoBehaviour
     {
         if (!isMuted)
         {
+            myAudioSource.mute = true;
             currentVolume = 0;
             isMuted = true;
         }
         else if (isMuted)
         {
+            myAudioSource.mute = false;
             currentVolume = crashVolume;
             isMuted = false;
         }
+    }
+
+    public static IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float start = audioSource.volume;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        yield break;
     }
 }

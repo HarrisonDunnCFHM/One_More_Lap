@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8135dc98907f36e4b8b1064e19ee0df7, type: 3}
   m_Name: Story 34
   m_EditorClassIdentifier: 
-  storyText: That's you. Insanity.
+  storyText: Insanity is you.
   nextStory: {fileID: 11400000, guid: 4cd4a24ca600dc64887f908953f6da34, type: 2}

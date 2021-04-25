@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8135dc98907f36e4b8b1064e19ee0df7, type: 3}
   m_Name: Story 9
   m_EditorClassIdentifier: 
-  storyText: Ok, I'm sorry. This is the last one. I promise.
+  storyText: Ok, I apologize. This is the last one. I promise.
   nextStory: {fileID: 11400000, guid: 2ba9db2da5a718e458f6aa115dea9123, type: 2}

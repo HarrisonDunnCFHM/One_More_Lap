@@ -30998,16 +30998,6 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1892727766}
-    - target: {fileID: 1372093346941190972, guid: 272264284ea46df40be49a6d780bdcd6,
-        type: 3}
-      propertyPath: m_Lens.OrthographicSize
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372093346941190973, guid: 272264284ea46df40be49a6d780bdcd6,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2570003
-      objectReference: {fileID: 0}
     - target: {fileID: 1372093347074531342, guid: 272264284ea46df40be49a6d780bdcd6,
         type: 3}
       propertyPath: m_RootOrder
@@ -31067,16 +31057,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cameras
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372093347226332434, guid: 272264284ea46df40be49a6d780bdcd6,
-        type: 3}
-      propertyPath: orthographic size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372093347226332653, guid: 272264284ea46df40be49a6d780bdcd6,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2570003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 272264284ea46df40be49a6d780bdcd6, type: 3}
@@ -31164,10 +31144,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1892727767}
-    - target: {fileID: 15764055, guid: 9c2513d45c9af264b9051a25cf97fc05, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleMute
-      objectReference: {fileID: 0}
     - target: {fileID: 3715017704424776528, guid: 9c2513d45c9af264b9051a25cf97fc05,
         type: 3}
       propertyPath: m_RootOrder
@@ -31227,16 +31203,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvases
-      objectReference: {fileID: 0}
-    - target: {fileID: 3715017704571941154, guid: 9c2513d45c9af264b9051a25cf97fc05,
-        type: 3}
-      propertyPath: m_Text
-      value: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-      objectReference: {fileID: 0}
-    - target: {fileID: 3715017704571941155, guid: 9c2513d45c9af264b9051a25cf97fc05,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c2513d45c9af264b9051a25cf97fc05, type: 3}

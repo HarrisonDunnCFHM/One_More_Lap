@@ -74,7 +74,7 @@ MonoBehaviour:
   currentLap: 0
   lapCounter: {fileID: 0}
   lapText: {fileID: 0}
-  lapDisplayUnlock: 3
+  lapDisplayUnlock: 10
   speedIncreaseUnlock: 5
   speedIncrement: 1
   turnIncrement: 10

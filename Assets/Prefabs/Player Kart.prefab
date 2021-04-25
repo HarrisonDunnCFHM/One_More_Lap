@@ -103,7 +103,9 @@ MonoBehaviour:
   maxTurn: 210
   currentSpeed: 0
   crashNoise: {fileID: 8300000, guid: 0b39b0d501fff534c8e399357888ec37, type: 3}
-  crashVolume: 0.4
+  crashVolume: 0.2
+  motorVolumeLow: 0.3
+  motorVolumeHigh: 0.8
   crashParticles: {fileID: 8779490940987000456, guid: 023dce2cf8580be4aa95bc07566aef36,
     type: 3}
   checkpointA: 1
@@ -164,14 +166,14 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4467340967286271049}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0b39b0d501fff534c8e399357888ec37, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 84ac9e3bd42b6ad4a988d1f0490fe54e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.4
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
