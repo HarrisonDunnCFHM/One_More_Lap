@@ -7,7 +7,7 @@ public class MusicPlayer : MonoBehaviour
 {
 
     [SerializeField] bool isMuted = false;
-    [SerializeField] float fadeSpeed = 0.1f;
+    //[SerializeField] float fadeSpeed = 0.1f;
 
     AudioSource myAudioSource;
     

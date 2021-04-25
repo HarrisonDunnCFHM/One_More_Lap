@@ -11,7 +11,15 @@ public class Goal : MonoBehaviour
     [SerializeField] int currentLap = 0;
     [SerializeField] GameObject lapCounter;
     [SerializeField] Text lapText;
-    [SerializeField] int lapDisplayUnlock = 3;
+    [SerializeField] Text lapTextShadow;
+    [SerializeField] int lapDisplayUnlock = 10;
+    [SerializeField] GameObject timerCounter;
+    [SerializeField] GameObject lastLapCounter;
+    //[SerializeField] Text timerText;
+    [SerializeField] int timerDisplayUnlock = 5;
+    [SerializeField] GameObject bestTimeCounter;
+    //[SerializeField] Text bestTimeText;
+    [SerializeField] int bestTimeDisplayUnlock = 11;
     [SerializeField] int speedIncreaseUnlock = 5;
     [SerializeField] float speedIncrement = 1f;
     [SerializeField] float turnIncrement = 0.5f;
@@ -24,19 +32,25 @@ public class Goal : MonoBehaviour
 
     //cache
     StoryManager storyManager;
-    StoryIndex storyIndex;
+    //StoryIndex storyIndex;
     Kart playerKart;
     Darker[] darker;
+    LapTimer lapTimer;
 
     private void Start()
     {
         myCamera.m_Lens.OrthographicSize = startZoomOut;
         lapCounter.SetActive(false);
-        lapText.text = ("Laps: " + currentLap);
+        lastLapCounter.SetActive(false);
+        timerCounter.SetActive(false);
+        bestTimeCounter.SetActive(false);
+        lapText.text = "Laps: " + currentLap;
+        lapTextShadow.text = "Laps: " + currentLap;
         storyManager = FindObjectOfType<StoryManager>();
-        storyIndex = FindObjectOfType<StoryIndex>();
+        //storyIndex = FindObjectOfType<StoryIndex>();
         playerKart = FindObjectOfType<Kart>();
         darker = FindObjectsOfType<Darker>();
+        lapTimer = FindObjectOfType<LapTimer>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,10 +58,14 @@ public class Goal : MonoBehaviour
         if (playerKart.CheckCheckpoints())
         {
             playerKart.ResetCheckpoints();
-            this.currentLap++;
-            this.lapText.text = ("Laps: " + currentLap);
-            var myLap = storyIndex.GetCurrentLap(this.currentLap);
+            currentLap++;
+            lapText.text = "Laps: " + currentLap;
+            lapTextShadow.text = "Laps: " + currentLap;
+            //this.currentLap++;
+            //this.lapText.text = ("Laps: " + currentLap);
+            //var myLap = storyIndex.GetCurrentLap(this.currentLap);
             storyManager.DisplayText();
+            lapTimer.ResetTimer();
             Unlocks();
         }
         else
@@ -58,11 +76,21 @@ public class Goal : MonoBehaviour
 
     private void Unlocks()
     {
-        if(currentLap == lapDisplayUnlock)
+        if (currentLap == lapDisplayUnlock)
         {
             lapCounter.SetActive(true);
         }
-        if(currentLap % speedIncreaseUnlock == 0)
+        if (currentLap == timerDisplayUnlock)
+        {
+            lapTimer.StartTimer();
+            timerCounter.SetActive(true);
+        }
+        if (currentLap == bestTimeDisplayUnlock)
+        {
+            bestTimeCounter.SetActive(true);
+            lastLapCounter.SetActive(true);
+        }
+        if (currentLap % speedIncreaseUnlock == 0)
         {
             playerKart.IncreaseMoveSpeed(speedIncrement);
             playerKart.IncreaseTurnSpeed(turnIncrement);
