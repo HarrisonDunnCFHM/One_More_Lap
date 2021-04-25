@@ -32052,11 +32052,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5442268379506183113, guid: 38c76011821a0eb45ba7a6432a617069,
         type: 3}
-      propertyPath: fadeDelay
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5442268379506183113, guid: 38c76011821a0eb45ba7a6432a617069,
-        type: 3}
       propertyPath: storyText
       value: 
       objectReference: {fileID: 994355579}
