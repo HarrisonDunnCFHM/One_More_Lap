@@ -85207,6 +85207,11 @@ PrefabInstance:
       propertyPath: lapDisplayCanvas
       value: 
       objectReference: {fileID: 930198094}
+    - target: {fileID: 1272382880432588160, guid: 943a7d5309620c14a83c629191e984b6,
+        type: 3}
+      propertyPath: speedIncreaseFrequency
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1272382880432588161, guid: 943a7d5309620c14a83c629191e984b6,
         type: 3}
       propertyPath: m_Name
@@ -85276,6 +85281,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1372093346554519883, guid: 272264284ea46df40be49a6d780bdcd6,
+        type: 3}
+      propertyPath: m_Damping
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1372093346941190972, guid: 272264284ea46df40be49a6d780bdcd6,
         type: 3}
       propertyPath: m_Follow
@@ -85289,12 +85299,12 @@ PrefabInstance:
     - target: {fileID: 1372093346941190972, guid: 272264284ea46df40be49a6d780bdcd6,
         type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 7.000638
+      value: 7.004953
       objectReference: {fileID: 0}
     - target: {fileID: 1372093346941190973, guid: 272264284ea46df40be49a6d780bdcd6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4701662
+      value: 2.4712882
       objectReference: {fileID: 0}
     - target: {fileID: 1372093347074531342, guid: 272264284ea46df40be49a6d780bdcd6,
         type: 3}
@@ -85359,12 +85369,12 @@ PrefabInstance:
     - target: {fileID: 1372093347226332434, guid: 272264284ea46df40be49a6d780bdcd6,
         type: 3}
       propertyPath: orthographic size
-      value: 7.000638
+      value: 7.004953
       objectReference: {fileID: 0}
     - target: {fileID: 1372093347226332653, guid: 272264284ea46df40be49a6d780bdcd6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4701662
+      value: 2.4712882
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 272264284ea46df40be49a6d780bdcd6, type: 3}
@@ -85380,6 +85390,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Music Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2840124097188538033, guid: ca0e93bd5d0304247b2199741ec8ebe0,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 64e4f8382e9c23f468ef8fd6a08973eb, type: 3}
     - target: {fileID: 2840124097188538038, guid: ca0e93bd5d0304247b2199741ec8ebe0,
         type: 3}
       propertyPath: m_RootOrder

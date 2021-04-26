@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLoopEnd: 0
   loopRestartGoTo: {fileID: 0}
-  storyText: It's getting dark out, huh? Drive safely.
+  storyText: It is getting dark out, huh? Drive safely.
   nextStory: {fileID: 11400000, guid: 4514744e395da574d95d8bf6e01b02a0, type: 2}
