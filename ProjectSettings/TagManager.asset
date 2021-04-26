@@ -58,8 +58,14 @@ TagManager:
   - name: Player
     uniqueID: 4116124111
     locked: 0
+  - name: Decor Short Shadow
+    uniqueID: 2015382629
+    locked: 0
   - name: Decor Short
     uniqueID: 3266825535
+    locked: 0
+  - name: Decor Tall Shadow
+    uniqueID: 886008175
     locked: 0
   - name: Decor Tall
     uniqueID: 1341935211
