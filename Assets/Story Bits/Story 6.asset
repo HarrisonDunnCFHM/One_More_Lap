@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8135dc98907f36e4b8b1064e19ee0df7, type: 3}
   m_Name: Story 6
   m_EditorClassIdentifier: 
-  storyText: Got you again! One more this time.
-  nextStory: {fileID: 11400000, guid: 4514744e395da574d95d8bf6e01b02a0, type: 2}
+  isLoopEnd: 0
+  loopRestartGoTo: {fileID: 0}
+  storyText: Got you again! Too easy.
+  nextStory: {fileID: 11400000, guid: 1a5768587ccded14e97984a3dd314865, type: 2}

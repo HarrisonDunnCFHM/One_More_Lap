@@ -47,7 +47,7 @@ MonoBehaviour:
   storyText: {fileID: 0}
   storyTextShadow: {fileID: 0}
   startingStory: {fileID: 11400000, guid: bbbc38083dfeb09418e2b198a60c7c7b, type: 2}
-  fadeDelay: 3
+  fadeDelay: 4
   fadeSpeed: 0.8
 --- !u!114 &5442268379506183115
 MonoBehaviour:

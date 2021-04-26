@@ -3645,7 +3645,6 @@ GameObject:
   - component: {fileID: 565803885}
   - component: {fileID: 565803888}
   - component: {fileID: 565803887}
-  - component: {fileID: 565803886}
   m_Layer: 0
   m_Name: Decor Short Shadow
   m_TagString: Untagged
@@ -3667,19 +3666,6 @@ Transform:
   m_Father: {fileID: 265806196}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &565803886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565803884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c65be32bb14e5e40abf7fa78bc08989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  darkenRate: 0.1
 --- !u!483693784 &565803887
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -83909,7 +83895,6 @@ GameObject:
   - component: {fileID: 1719108777}
   - component: {fileID: 1719108780}
   - component: {fileID: 1719108779}
-  - component: {fileID: 1719108778}
   m_Layer: 0
   m_Name: Decor Tall Shadow
   m_TagString: Untagged
@@ -83931,19 +83916,6 @@ Transform:
   m_Father: {fileID: 2065865117}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1719108778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719108776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c65be32bb14e5e40abf7fa78bc08989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  darkenRate: 0.1
 --- !u!483693784 &1719108779
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -85314,6 +85286,16 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1892727766}
+    - target: {fileID: 1372093346941190972, guid: 272264284ea46df40be49a6d780bdcd6,
+        type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 7.000638
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372093346941190973, guid: 272264284ea46df40be49a6d780bdcd6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.4701662
+      objectReference: {fileID: 0}
     - target: {fileID: 1372093347074531342, guid: 272264284ea46df40be49a6d780bdcd6,
         type: 3}
       propertyPath: m_RootOrder
@@ -85373,6 +85355,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cameras
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372093347226332434, guid: 272264284ea46df40be49a6d780bdcd6,
+        type: 3}
+      propertyPath: orthographic size
+      value: 7.000638
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372093347226332653, guid: 272264284ea46df40be49a6d780bdcd6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.4701662
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 272264284ea46df40be49a6d780bdcd6, type: 3}

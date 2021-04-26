@@ -18,7 +18,9 @@ public class SceneLoader : MonoBehaviour
         playerKart = FindObjectOfType<Kart>();
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         isPaused = false;
-        pauseOverlay.SetActive(false);
+        if (pauseOverlay == null)
+        { return; }
+        else { pauseOverlay.SetActive(false); }
     }
 
     public void LoadNextScene()

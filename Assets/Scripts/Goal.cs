@@ -56,8 +56,8 @@ public class Goal : MonoBehaviour
         timerCanvas.SetActive(false);
         bestTimeCanvas.SetActive(false);
         quitCanvas.SetActive(false);
-        lapText.text = "Laps: " + currentLap;
-        lapTextShadow.text = "Laps: " + currentLap;
+        lapText.text = currentLap + " Laps";
+        lapTextShadow.text = currentLap + " Laps";
         storyManager = FindObjectOfType<StoryManager>();
         //storyIndex = FindObjectOfType<StoryIndex>();
         playerKart = FindObjectOfType<Kart>();
@@ -72,8 +72,8 @@ public class Goal : MonoBehaviour
         {
             playerKart.ResetCheckpoints();
             currentLap++;
-            lapText.text = "Laps: " + currentLap;
-            lapTextShadow.text = "Laps: " + currentLap;
+            lapText.text = currentLap + " Laps";
+            lapTextShadow.text = currentLap + " Laps";
             //this.currentLap++;
             //this.lapText.text = ("Laps: " + currentLap);
             //var myLap = storyIndex.GetCurrentLap(this.currentLap);
