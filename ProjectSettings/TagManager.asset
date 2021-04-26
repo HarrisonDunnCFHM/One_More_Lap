@@ -49,6 +49,12 @@ TagManager:
   - name: Course
     uniqueID: 1338508153
     locked: 0
+  - name: Kart Shadow
+    uniqueID: 2268941593
+    locked: 0
+  - name: Exhaust
+    uniqueID: 1912436175
+    locked: 0
   - name: Player
     uniqueID: 4116124111
     locked: 0

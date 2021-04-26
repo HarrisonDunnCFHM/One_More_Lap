@@ -240,7 +240,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1028141761
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.57000005, y: 0.55999994, z: 0}
@@ -83116,7 +83116,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1341935211
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.57000005, y: 0.55999994, z: 0}
@@ -84090,11 +84090,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Story
-      objectReference: {fileID: 0}
-    - target: {fileID: 5442268379506183113, guid: 38c76011821a0eb45ba7a6432a617069,
-        type: 3}
-      propertyPath: fadeDelay
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5442268379506183113, guid: 38c76011821a0eb45ba7a6432a617069,
         type: 3}
