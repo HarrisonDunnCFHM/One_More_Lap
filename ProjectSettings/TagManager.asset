@@ -64,3 +64,6 @@ TagManager:
   - name: UI
     uniqueID: 1063298103
     locked: 0
+  - name: Pause UI
+    uniqueID: 3476926993
+    locked: 0

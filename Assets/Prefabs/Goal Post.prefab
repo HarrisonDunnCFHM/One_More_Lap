@@ -72,23 +72,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLap: 0
-  lapCounter: {fileID: 0}
+  startZoomOut: 6
+  maxZoom: 9
+  zoomOutSpeed: 1
   lapText: {fileID: 0}
   lapTextShadow: {fileID: 0}
-  lapDisplayUnlock: 10
-  timerCounter: {fileID: 0}
-  lastLapCounter: {fileID: 0}
-  timerDisplayUnlock: 5
-  bestTimeCounter: {fileID: 0}
-  bestTimeDisplayUnlock: 6
-  speedIncreaseUnlock: 5
-  speedIncrement: 1
-  turnIncrement: 15
   myCamera: {fileID: 0}
-  startZoomOut: 6
+  lapDisplayCanvas: {fileID: 0}
+  lapDisplayUnlock: 9
+  timerCanvas: {fileID: 0}
+  timerDisplayUnlock: 6
+  lastLapCanvas: {fileID: 0}
+  bestTimeCanvas: {fileID: 0}
+  bestTimeDisplayUnlock: 7
+  kartHeadlights: {fileID: 0}
+  lightsUnlock: 31
+  quitCanvas: {fileID: 0}
+  quitUnlock: 79
+  takeAwayLapCounter: 102
+  giveBackLapCounter: 111
+  takeAwayBestTimer: 111
+  giveBackBestTimer: 120
+  speedIncreaseFrequency: 5
+  speedIncrement: 1
+  turnIncrement: 25
   zoomIncrement: 1
-  zoomOutSpeed: 1
-  maxZoom: 10
   darkenScreenEachLevel: 5
 --- !u!212 &5871280017735859428
 SpriteRenderer:

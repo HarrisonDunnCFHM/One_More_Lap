@@ -23,6 +23,7 @@ public class Kart : MonoBehaviour
     [SerializeField] bool checkpointA = true; //serialized for debugging
     [SerializeField] bool checkpointB = true; //serialized for debugging
     [SerializeField] bool isMuted = false;
+    [SerializeField] bool gamePaused;
     [SerializeField] float currentVolume;
 
     //cache
@@ -39,6 +40,7 @@ public class Kart : MonoBehaviour
         currentVolume = crashVolume;
         myAudioSource = GetComponent<AudioSource>();
         myAudioSource.volume = motorVolumeLow;
+        gamePaused = false;
     }
 
     // Update is called once per frame
@@ -133,20 +135,42 @@ public class Kart : MonoBehaviour
     }
     public void ToggleMute()
     {
-        if (!isMuted)
+        if (!gamePaused)
         {
-            myAudioSource.mute = true;
-            currentVolume = 0;
-            isMuted = true;
+            if (!isMuted)
+            {
+                myAudioSource.mute = true;
+                currentVolume = 0;
+                isMuted = true;
+            }
+            else if (isMuted)
+            {
+                myAudioSource.mute = false;
+                currentVolume = crashVolume;
+                isMuted = false;
+            }
         }
-        else if (isMuted)
-        {
-            myAudioSource.mute = false;
-            currentVolume = crashVolume;
-            isMuted = false;
+        else 
+        { 
+            return;
         }
     }
 
+    public void ToggleMuteInput(bool toggle)
+    {
+        if (toggle)
+        {
+            myAudioSource.mute = true;
+            gamePaused = true;
+            isMuted = true;
+        }
+        else if (!toggle)
+        {
+            myAudioSource.mute = false;
+            gamePaused = false;
+            isMuted = false;
+        }
+    }
     public static IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
     {
         float currentTime = 0;

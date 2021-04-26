@@ -7,9 +7,11 @@ public class MusicPlayer : MonoBehaviour
 {
 
     [SerializeField] bool isMuted = false;
+    [SerializeField] bool gamePaused;
     //[SerializeField] float fadeSpeed = 0.1f;
 
     AudioSource myAudioSource;
+
     
     /*private void Awake()
     {
@@ -27,6 +29,7 @@ public class MusicPlayer : MonoBehaviour
     private void Start()
     {
         myAudioSource = GetComponent<AudioSource>();
+        gamePaused = false;
     }
 
     public void FadeOutMusic()
@@ -50,18 +53,40 @@ public class MusicPlayer : MonoBehaviour
 
     public void ToggleMute()
     {
-        if(!isMuted)
+        if (!gamePaused)
         {
-            myAudioSource.mute = true;
-            isMuted = true;
+            if (!isMuted)
+            {
+                myAudioSource.mute = true;
+                isMuted = true;
+            }
+            else if (isMuted)
+            {
+                myAudioSource.mute = false;
+                isMuted = false;
+            }
         }
-        else if(isMuted)
-        {
-            myAudioSource.mute = false;
-            isMuted = false;
+        else
+        { 
+            return;
         }
     }
 
+    public void ToggleMuteInput(bool toggle)
+    {
+        if(toggle)
+        {
+            myAudioSource.mute = true;
+            gamePaused = true;
+            isMuted = true;
+        }
+        else if (!toggle)
+        {
+            myAudioSource.mute = false;
+            gamePaused = false;
+            isMuted = false;
+        }
+    }
     
 
     // Update is called once per frame

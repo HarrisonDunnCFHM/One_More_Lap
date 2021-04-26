@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8135dc98907f36e4b8b1064e19ee0df7, type: 3}
   m_Name: Story 31
   m_EditorClassIdentifier: 
-  storyText: What the HELL are you doing?
-  nextStory: {fileID: 11400000, guid: 4cd4a24ca600dc64887f908953f6da34, type: 2}
+  isLoopEnd: 0
+  loopRestartGoTo: {fileID: 0}
+  storyText: 'Okay smarty pants. Turn on the lights. That will keep you safe. '
+  nextStory: {fileID: 11400000, guid: 4514744e395da574d95d8bf6e01b02a0, type: 2}

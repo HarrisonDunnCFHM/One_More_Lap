@@ -8,29 +8,40 @@ using Cinemachine;
 public class Goal : MonoBehaviour
 {
     //config params
+    [Header("Debug")]
     [SerializeField] int currentLap = 0;
-    [SerializeField] GameObject lapCounter;
+    [Header("Configuration Parameters")]
+    [SerializeField] float startZoomOut = 5f;
+    [SerializeField] float maxZoom = 10f;
+    [SerializeField] float zoomOutSpeed = 0.1f;
+    [Header("Object Assignments")]
     [SerializeField] Text lapText;
     [SerializeField] Text lapTextShadow;
+    [SerializeField] CinemachineVirtualCamera myCamera;
+    [Header("Unlocks")]
+    [SerializeField] GameObject lapDisplayCanvas;
     [SerializeField] int lapDisplayUnlock = 10;
-    [SerializeField] GameObject timerCounter;
-    [SerializeField] GameObject lastLapCounter;
-    //[SerializeField] Text timerText;
+    [SerializeField] GameObject timerCanvas;
     [SerializeField] int timerDisplayUnlock = 5;
-    [SerializeField] GameObject bestTimeCounter;
-    //[SerializeField] Text bestTimeText;
+    [SerializeField] GameObject lastLapCanvas;
+    [SerializeField] GameObject bestTimeCanvas;
     [SerializeField] int bestTimeDisplayUnlock = 11;
-    [SerializeField] int speedIncreaseUnlock = 5;
+    [SerializeField] GameObject kartHeadlights;
+    [SerializeField] int lightsUnlock = 31;
+    [SerializeField] GameObject quitCanvas;
+    [SerializeField] int quitUnlock = 79;
+    [SerializeField] int takeAwayLapCounter = 102;
+    [SerializeField] int giveBackLapCounter = 111;
+    [SerializeField] int takeAwayBestTimer = 111;
+    [SerializeField] int giveBackBestTimer = 120;
+    [Header("Increments")]
+    [SerializeField] int speedIncreaseFrequency = 5;
     [SerializeField] float speedIncrement = 1f;
     [SerializeField] float turnIncrement = 0.5f;
-    [SerializeField] CinemachineVirtualCamera myCamera;
-    [SerializeField] float startZoomOut = 5f;
     [SerializeField] float zoomIncrement = 1f;
-    [SerializeField] float zoomOutSpeed = 0.1f;
-    [SerializeField] float maxZoom = 10f;
     [SerializeField] int darkenScreenEachLevel = 5;
 
-    //cache
+        //cache
     StoryManager storyManager;
     //StoryIndex storyIndex;
     Kart playerKart;
@@ -40,10 +51,11 @@ public class Goal : MonoBehaviour
     private void Start()
     {
         myCamera.m_Lens.OrthographicSize = startZoomOut;
-        lapCounter.SetActive(false);
-        lastLapCounter.SetActive(false);
-        timerCounter.SetActive(false);
-        bestTimeCounter.SetActive(false);
+        lapDisplayCanvas.SetActive(false);
+        lastLapCanvas.SetActive(false);
+        timerCanvas.SetActive(false);
+        bestTimeCanvas.SetActive(false);
+        quitCanvas.SetActive(false);
         lapText.text = "Laps: " + currentLap;
         lapTextShadow.text = "Laps: " + currentLap;
         storyManager = FindObjectOfType<StoryManager>();
@@ -51,6 +63,7 @@ public class Goal : MonoBehaviour
         playerKart = FindObjectOfType<Kart>();
         darker = FindObjectsOfType<Darker>();
         lapTimer = FindObjectOfType<LapTimer>();
+        kartHeadlights.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -78,19 +91,19 @@ public class Goal : MonoBehaviour
     {
         if (currentLap == lapDisplayUnlock)
         {
-            lapCounter.SetActive(true);
+            lapDisplayCanvas.SetActive(true);
         }
         if (currentLap == timerDisplayUnlock)
         {
             lapTimer.StartTimer();
-            timerCounter.SetActive(true);
+            timerCanvas.SetActive(true);
         }
         if (currentLap == bestTimeDisplayUnlock)
         {
-            bestTimeCounter.SetActive(true);
-            lastLapCounter.SetActive(true);
+            bestTimeCanvas.SetActive(true);
+            lastLapCanvas.SetActive(true);
         }
-        if (currentLap % speedIncreaseUnlock == 0)
+        if (currentLap % speedIncreaseFrequency == 0)
         {
             playerKart.IncreaseMoveSpeed(speedIncrement);
             playerKart.IncreaseTurnSpeed(turnIncrement);
@@ -99,6 +112,30 @@ public class Goal : MonoBehaviour
         if (currentLap % darkenScreenEachLevel == 0)
         {
             DarkenScreen();
+        }
+        if (currentLap == lightsUnlock)
+        {
+            kartHeadlights.SetActive(true);
+        }
+        if (currentLap == quitUnlock)
+        {
+            quitCanvas.SetActive(true);
+        }
+        if (currentLap == takeAwayLapCounter)
+        {
+            lapDisplayCanvas.SetActive(false);
+        }
+        if (currentLap == giveBackLapCounter)
+        {
+            lapDisplayCanvas.SetActive(true);
+        }
+        if (currentLap == takeAwayBestTimer)
+        {
+            bestTimeCanvas.SetActive(false);
+        }
+        if (currentLap == giveBackBestTimer)
+        {
+            bestTimeCanvas.SetActive(true);
         }
     }
 

@@ -5,13 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] GameObject pauseOverlay;
+    
     int sceneIndex;
     MusicPlayer musicPlayer;
+    bool isPaused;
+    Kart playerKart;
 
     private void Start()
     {
         musicPlayer = FindObjectOfType<MusicPlayer>();
+        playerKart = FindObjectOfType<Kart>();
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        isPaused = false;
+        pauseOverlay.SetActive(false);
     }
 
     public void LoadNextScene()
@@ -24,5 +31,30 @@ public class SceneLoader : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(sceneIndex + 1);
+    }
+
+    public void QuitToStart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void TogglePause()
+    {
+        if (!isPaused)
+        {
+            pauseOverlay.SetActive(true);
+            isPaused = true;
+            musicPlayer.ToggleMuteInput(isPaused);
+            playerKart.ToggleMuteInput(isPaused);
+            Time.timeScale = 0;
+        }
+        else if (isPaused)
+        {
+            pauseOverlay.SetActive(false);
+            isPaused = false;
+            musicPlayer.ToggleMuteInput(isPaused);
+            playerKart.ToggleMuteInput(isPaused);
+            Time.timeScale = 1;
+        }
     }
 }
